@@ -22,7 +22,7 @@ public class Transaction {
     private User customer;
 
     @OneToOne
-    private Orders orders;
+    private Order order;
 
     @ManyToOne
     private Seller seller;

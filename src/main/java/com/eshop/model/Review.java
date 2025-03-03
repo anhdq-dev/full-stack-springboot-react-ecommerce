@@ -20,9 +20,11 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String content;
 
-    private double rating;
+    @Column(nullable = false)
+    private Double rating;
 
     @ElementCollection
     private List<String> images;
@@ -34,6 +36,7 @@ public class Review {
     @ManyToOne
     private User user;
 
+    @Column(nullable = false)
     private LocalDateTime createAt = LocalDateTime.now();
 
 }

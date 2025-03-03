@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,8 +20,8 @@ public class Category {
 
     private String name;
 
-    @Column(unique = true)
     @NotNull
+    @Column(unique = true)
     private String categoryId;
 
     @ManyToOne

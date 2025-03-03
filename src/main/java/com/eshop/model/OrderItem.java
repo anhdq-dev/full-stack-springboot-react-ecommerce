@@ -19,14 +19,14 @@ public class OrderItem {
 
     @JsonIgnore
     @ManyToOne
-    private Orders orders;
+    private Order order;
 
     @ManyToOne
     private Product product;
 
     private String size;
 
-    private String quantity;
+    private Integer quantity;
 
     private Integer mrpPrice;
 
