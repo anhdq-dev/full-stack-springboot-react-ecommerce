@@ -37,8 +37,8 @@ public class User {
     @OneToMany
     private Set<Address> address = new HashSet<>();
 
-    @OneToMany
+    @ManyToMany
     @JsonIgnore
-    private Set<Coupon> coupons = new HashSet<>();
+    private Set<Coupon> usedCoupons = new HashSet<>();
 
 }

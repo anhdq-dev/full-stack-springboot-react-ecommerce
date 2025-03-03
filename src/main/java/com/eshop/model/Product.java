@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,20 +23,20 @@ public class Product {
 
     private String description;
 
-    private int mrpPrice;
+    private Integer mrpPrice;
 
-    private int sellingPrice;
+    private Integer sellingPrice;
 
-    private int discountPercent;
+    private Integer discountPercent;
 
-    private int quantity;
+    private Integer quantity;
 
     private String color;
 
     @ElementCollection
     private List<String> images = new ArrayList<>();
 
-    private int numRatings;
+    private Integer numRatings;
 
     @ManyToOne
     private Category category;
@@ -45,10 +44,10 @@ public class Product {
     @ManyToOne
     private Seller seller;
 
-    private LocalDate createAt;
+    private LocalDateTime createAt;
 
     private String sizes;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Reviews> reviews = new ArrayList<>();
+    private List<Review> reviews = new ArrayList<>();
 }
